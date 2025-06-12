@@ -2,7 +2,9 @@ import pandas as pd
 
 def load_penguin_data():
     """Load penguin dataset and return DataFrame shape"""
-    # Enter your code here
+    #Load penguin dataset from seaborn
+    import seaborn as sns
+    df = sns.load_dataset('penguins')
     return df.shape
 
 if __name__ == "__main__":

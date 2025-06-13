@@ -1,4 +1,5 @@
 import pandas as pd
+import seaborn as sns
 
 def load_penguin_data():
     """Load penguin dataset and return DataFrame shape"""

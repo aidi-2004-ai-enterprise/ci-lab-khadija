@@ -11,20 +11,20 @@
      
      steps: # Note: Steps run chronologically!
      - name: Checkout code
-     uses: actions/checkout@v4  # Download repo code
+       uses: actions/checkout@v4  # Download repo code
      
      - name: Set up Python
-     uses: actions/setup-python@v5 # Each job runs on a fresh virtual machine
-     with:
+       uses: actions/setup-python@v5 # Each job runs on a fresh virtual machine
+       with:
          python-version: '3.10' 
      
      - name: Install dependencies
-     run: | # The | is a YAML multiline string operator that lets you write multiple commands across several lines.
+       run: | # The | is a YAML multiline string operator that lets you write multiple commands across several lines.
          pip install uv
          uv sync  # Install all dependencies from pyproject.toml
      
      - name: Run Python script
-     run: uv run python main.py 
+       run: uv run python main.py 
 
   test:  # 2. Then: run tests on the built code
      runs-on: ubuntu-latest
@@ -32,20 +32,20 @@
      
      steps:
      - name: Checkout code
-     uses: actions/checkout@v4 
+       uses: actions/checkout@v4 
      
      - name: Set up Python
-     uses: actions/setup-python@v5  # Each job runs on a fresh virtual machine
-     with:
+       uses: actions/setup-python@v5  # Each job runs on a fresh virtual machine
+       with:
          python-version: '3.10'
      
      - name: Install dependencies
-     run: |
+       run: |
          pip install uv
          uv sync  # Install dependencies again for this job
      
      - name: Run tests
-     run: uv run pytest test_main.py -v  # This is where the unit tests run!
+       run: uv run pytest test_main.py -v  # This is where the unit tests run!
          
      
      # Missing deploy job
